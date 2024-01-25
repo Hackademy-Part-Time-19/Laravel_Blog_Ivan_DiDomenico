@@ -8,9 +8,9 @@
 <title>Document</title>
 </head>
 <body>
-<a href="/articoli">Articoli</a>
-<a href="/ChiSono">Chi sono</a>
-<h1>PAGINA HOME</h1>
+<a href="{{route('articoli')}}">Articoli</a>
+<a href="{{route('contatti')}}">Contatti</a>
+<h1>{{$titolo}}</h1>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>
