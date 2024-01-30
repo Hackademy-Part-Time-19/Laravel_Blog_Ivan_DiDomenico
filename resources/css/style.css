@@ -1,0 +1,17 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h1{
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+body{
+    background-color: rgb(44, 43, 43);
+}
+
+#Container-Articoli{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}

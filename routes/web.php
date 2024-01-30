@@ -1,5 +1,6 @@
 <?php
-
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,40 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/',[PageController::class,'homepage'])->name('home');
 
-    $titolo = 'TITOLO_BLOG';
+Route::get('/chi-sono', [PageController::class,'chisono'])->name('contatti');
 
-    return view('homepage',['titolo'=>$titolo]);
-})->name('home');
+Route::get('/articoli', [ArticleController::class,'index'])->name('articoli');
 
-Route::get('/articoli', function () {
-
-    $articoli = [
-        ['titolo'=>'Articolo 1','descrizione'=>'descrizione articolo','categoria'=>'Sport'],
-        ['titolo'=>'Articolo 2','descrizione'=>'descrizione articolo','categoria'=>'Cronaca'],
-        ['titolo'=>'Articolo 3','descrizione'=>'descrizione articolo','categoria'=>'Politica'],
-        ['titolo'=>'Articolo 4','descrizione'=>'descrizione articolo','categoria'=>'Meteo']
-    ];
-
-    return view('pages.articoli',['articoli' => $articoli]);
-})->name('articoli');
+Route::get('articoli/dettaglio/{id}', [ArticleController::class,'show'])->name('dettaglio');;
 
 
-Route::get('articoli/dettaglio/{id}', function($id){
 
-    $articoli = [
-        ['titolo'=>'Articolo 1','descrizione'=>'descrizione articolo','categoria'=>'Sport'],
-        ['titolo'=>'Articolo 2','descrizione'=>'descrizione articolo','categoria'=>'Cronaca'],
-        ['titolo'=>'Articolo 3','descrizione'=>'descrizione articolo','categoria'=>'Politica'],
-        ['titolo'=>'Articolo 4','descrizione'=>'descrizione articolo','categoria'=>'Meteo']
-    ];
-
-    return view('pages.dettaglio',['articoli'=>$articoli[$id]]);
-})->name('dettaglio');;
-
-
-Route::get('/chi-sono', function () {
-    return view('pages.ChiSono');
-})->name('contatti');
 
