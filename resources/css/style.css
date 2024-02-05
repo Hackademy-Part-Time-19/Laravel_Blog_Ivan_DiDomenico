@@ -3,11 +3,11 @@
 }
 h1{
     font-weight: bold;
-    color: whitesmoke;
+    color: rgb(65, 58, 58);
 }
 
 body{
-    background-color: rgb(44, 43, 43);
+    background-color: rgb(156, 155, 155);
 }
 
 #Container-Articoli{
