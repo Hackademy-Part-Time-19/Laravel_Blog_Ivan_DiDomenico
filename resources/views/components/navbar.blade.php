@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">MyBLOG</a>
+        <a class="navbar-brand" href="{{route('home')}}">MyBLOG</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -10,7 +10,13 @@
                     <a class="nav-link active" aria-current="page" href="{{route('articoli')}}">Articoli</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('contatti')}}">Contatti</a>
+                    <a class="nav-link active" href="{{route('contatti')}}">Contatti</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{route('generi.anime')}}">Generi Anime</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{route('generi.manga')}}">Generi Manga</a>
                 </li>
             </ul>
         </div>

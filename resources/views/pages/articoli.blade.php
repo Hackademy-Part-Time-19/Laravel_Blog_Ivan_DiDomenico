@@ -12,10 +12,11 @@
     @foreach($articoli as $chiave => $articolo)
     
     <x-card 
-    :titolo="$articolo['titolo']"
-    :categoria="$articolo['categoria']"
-    :descrizione="$articolo['descrizione']"
+    :titolo="$articolo['title']"
+    :categoria="$articolo['category']"
+    :descrizione="$articolo['description']"
     :chiave="$chiave"
+    :image="$articolo['image']"
     />
     
     @endforeach

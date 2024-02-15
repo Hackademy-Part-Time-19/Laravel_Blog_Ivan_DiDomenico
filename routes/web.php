@@ -1,8 +1,10 @@
 <?php
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\AnimeController;
+use App\Http\Controllers\MangaController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ContactController;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +27,14 @@ Route::get('articoli/dettaglio/{id}', [ArticleController::class,'show'])->name('
 
 Route::post('/chi-sono/invio', [ContactController::class,'sendContact'])->name('contact.send');
 
+Route::get('/anime-generi',[AnimeController::class,'index'])->name('generi.anime');
 
+Route::get('/anime-genere/{id}',[AnimeController::class,'animeByGenre'])->name('genere.anime');
+
+Route::get('/manga-generi',[MangaController::class,'index'])->name('generi.manga');
+
+Route::get('/manga-genere/{id}',[MangaController::class,'mangaByGenre'])->name('genere.manga');
+
+Route::get('/article/create',[ArticleController::class,'create'])->name('article.create');
+
+Route::post('/article/store',[ArticleController::class,'store'])->name('article.store');
