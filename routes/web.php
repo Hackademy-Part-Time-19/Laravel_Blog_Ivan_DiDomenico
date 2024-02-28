@@ -5,6 +5,9 @@ use App\Http\Controllers\AnimeController;
 use App\Http\Controllers\MangaController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CategoryController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +24,10 @@ Route::get('/',[PageController::class,'homepage'])->name('home');
 
 Route::get('/chi-sono', [PageController::class,'chisono'])->name('contatti');
 
-Route::get('/articoli', [ArticleController::class,'index'])->name('articoli');
+Route::resource('articles',ArticleController::class)->middleware('auth');
 
-Route::get('articoli/dettaglio/{id}', [ArticleController::class,'show'])->name('dettaglio');;
+Route::resource('categories',CategoryController::class)->middleware('auth');
+
 
 Route::post('/chi-sono/invio', [ContactController::class,'sendContact'])->name('contact.send');
 
@@ -35,6 +39,5 @@ Route::get('/manga-generi',[MangaController::class,'index'])->name('generi.manga
 
 Route::get('/manga-genere/{id}',[MangaController::class,'mangaByGenre'])->name('genere.manga');
 
-Route::get('/article/create',[ArticleController::class,'create'])->name('article.create');
+Route::get('/profile',[ProfileController::class,'index'])->name('profile')->middleware('auth');
 
-Route::post('/article/store',[ArticleController::class,'store'])->name('article.store');
