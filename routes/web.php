@@ -1,4 +1,6 @@
 <?php
+use App\Livewire\Counter;
+use App\Livewire\SearchUsers;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\AnimeController;
@@ -41,3 +43,6 @@ Route::get('/manga-genere/{id}',[MangaController::class,'mangaByGenre'])->name('
 
 Route::get('/profile',[ProfileController::class,'index'])->name('profile')->middleware('auth');
 
+Route::get('/counter', Counter::class)->name('counter');
+
+Route::get('/search-users',SearchUsers::class)->name('serachUsers');
